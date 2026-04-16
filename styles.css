@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --navy: #1b2a4a;
   --navy-deep: #13203a;
   --teal: #2a9d8f;
@@ -3216,4 +3216,350 @@ a.coverage-card {
   display: block;
   color: inherit;
 }
+/* Mobile refinement overrides */
+.nav-wrap > * {
+  min-width: 0;
+}
 
+.brand-copy {
+  min-width: 0;
+}
+
+.main-nav a {
+  line-height: 1.35;
+}
+
+@media (max-width: 1180px) {
+  .nav-wrap {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer-brand-block {
+    grid-column: 1 / -1;
+    max-width: 720px;
+  }
+
+  .logo-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .main-nav {
+    gap: 18px 22px;
+  }
+
+  .hero-visual {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .nav-wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px 18px;
+    min-height: 74px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .main-nav,
+  .header-cta {
+    display: none;
+  }
+
+  .site-header.nav-open .main-nav {
+    display: grid;
+    grid-column: 1 / -1;
+    gap: 10px;
+    width: 100%;
+    padding: 18px;
+    margin-top: 6px;
+    align-content: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(217, 226, 238, 0.95);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .site-header.nav-open .main-nav a {
+    display: block;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(244, 247, 251, 0.82);
+  }
+
+  .site-header.nav-open .main-nav a::after {
+    display: none;
+  }
+
+  .site-header.nav-open .main-nav a.is-active {
+    background: rgba(42, 157, 143, 0.12);
+  }
+
+  .site-header.nav-open .header-cta {
+    display: inline-flex;
+    grid-column: 1 / -1;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .site-header.nav-open .button {
+    width: 100%;
+  }
+
+  .hero-grid,
+  .case-study-grid,
+  .cta-panel,
+  .page-hero-grid,
+  .feature-panel,
+  .story-panel,
+  .contact-layout,
+  .download-panel,
+  .article-layout,
+  .legal-layout,
+  .split-panel,
+  .location-panel,
+  .footer-links-expanded {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid,
+  .insights-grid,
+  .team-grid,
+  .stats-grid,
+  .stat-strip,
+  .capability-grid,
+  .card-grid-3,
+  .resource-grid,
+  .media-grid,
+  .case-list-grid,
+  .blog-grid,
+  .team-profile-grid,
+  .link-grid,
+  .download-grid,
+  .policy-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-visual,
+  .page-hero-media {
+    min-height: auto;
+    padding-top: 18px;
+  }
+
+  .floating-card,
+  .floating-insight-card,
+  .metric-float {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: none;
+    margin-top: 18px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .container,
+  .case-study-page .container {
+    width: min(1200px, calc(100% - 32px));
+  }
+
+  .section,
+  .section-accent,
+  .case-study-page .section {
+    padding: 68px 0;
+  }
+
+  .hero,
+  .page-hero {
+    padding: 22px 0 54px;
+  }
+
+  .hero h1,
+  .page-hero-copy h1,
+  .article-hero h1,
+  .not-found-card h1 {
+    max-width: none;
+    font-size: clamp(2.4rem, 11vw, 3.6rem);
+    line-height: 1.02;
+  }
+
+  h2 {
+    font-size: clamp(1.85rem, 8vw, 2.7rem);
+    line-height: 1.08;
+  }
+
+  .lead,
+  .section-copy p,
+  .case-copy p,
+  .insight-body p,
+  .team-card p,
+  .stat-card p,
+  .cta-copy p,
+  .footer-brand-block p,
+  .site-footer li,
+  .page-hero-copy .lead,
+  .page-hero-copy p,
+  .hero-note,
+  .section-summary,
+  .feature-body p,
+  .listing-card p,
+  .media-card p,
+  .resource-card p,
+  .contact-copy p,
+  .contact-detail-card p,
+  .download-panel p,
+  .legal-card p,
+  .legal-card li,
+  .article-aside p,
+  .article-body p,
+  .article-body li,
+  .article-callout p,
+  .not-found-card p,
+  .publication-summary,
+  .team-grid .bio,
+  .location-copy p,
+  .filter-summary {
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+
+  .button {
+    width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-actions,
+  .hero-highlights,
+  .page-hero-actions,
+  .hero-meta-row,
+  .tag-row,
+  .filter-chips,
+  .inline-actions,
+  .download-links,
+  .client-inline-links,
+  .expertise-tags,
+  .contact-tag-row,
+  .card-link-row,
+  .card-actions,
+  .panel-actions,
+  .media-links {
+    display: grid;
+  }
+
+  .services-grid,
+  .insights-grid,
+  .team-grid,
+  .stats-grid,
+  .result-grid,
+  .stat-strip,
+  .capability-grid,
+  .card-grid-3,
+  .resource-grid,
+  .media-grid,
+  .case-list-grid,
+  .blog-grid,
+  .team-profile-grid,
+  .link-grid,
+  .download-grid,
+  .policy-grid,
+  .form-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    padding: 22px 18px;
+  }
+
+  .main-visual-card {
+    min-height: auto;
+    padding: 28px;
+  }
+
+  .main-visual-card h2 {
+    margin-top: 72px;
+  }
+
+  .hero-metric-row,
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-visual-card {
+    min-height: 340px;
+  }
+
+  .cta-panel {
+    padding: 30px 24px;
+  }
+
+  .footer-brand-block {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .footer-bottom {
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .socials {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand {
+    gap: 12px;
+  }
+
+  .brand-label {
+    display: none;
+  }
+
+  .brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .nav-toggle {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .site-header.nav-open .main-nav {
+    padding: 16px;
+    border-radius: 20px;
+  }
+}
